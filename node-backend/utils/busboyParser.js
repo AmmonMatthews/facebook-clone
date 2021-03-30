@@ -6,6 +6,20 @@ const config = require('../config');
 
 const MongoClient = mongodb.MongoClient;
 
+// const uri = "mongodb+srv://ammonmatthews:microbe7@cluster0.qepfi.mongodb.net/facebook-clone";
+// let gfs;
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db(config.db.mongodb.dbName);
+//   // perform actions on the collection object
+//   if(collection) {
+//       gfs = new mongodb.GridFSBucket(collection)
+//     }
+//     console.log('this is the collection ------', gfs)
+//   client.close();
+// });
+
+
 let gfs;
 MongoClient.connect(config.db.mongodb.uri, {
     useNewUrlParser: true,

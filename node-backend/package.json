@@ -4,7 +4,8 @@
   "description": "Facebook clone backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
   },
   "keywords": [
     "Facebook",
@@ -24,9 +25,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.17.6",
-    "mongodb": "^3.2.7",
+    "mongodb": "^3.6.5",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
+    "nodemon": "^2.0.7",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",

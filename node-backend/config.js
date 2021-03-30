@@ -3,7 +3,7 @@ module.exports = {
         mariadb: {
             host: '127.0.0.1',
             user: 'root',
-            password: '',
+            password: 'microbe7',
             database: 'facebook-clone'
         },
         mongodb: {
