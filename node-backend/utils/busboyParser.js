@@ -6,40 +6,40 @@ const config = require('../config');
 
 const MongoClient = mongodb.MongoClient;
 
-// const uri = "mongodb+srv://ammonmatthews:microbe7@cluster0.qepfi.mongodb.net/facebook-clone";
-// let gfs;
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db(config.db.mongodb.dbName);
-//   // perform actions on the collection object
-//   if(collection) {
-//       gfs = new mongodb.GridFSBucket(collection)
-//     }
-//     console.log('this is the collection ------', gfs)
-//   client.close();
-// });
-
-
+const uri = "mongodb+srv://ammonmatthews:microbe7@cluster0.qepfi.mongodb.net/facebook-clone";
 let gfs;
-MongoClient.connect(config.db.mongodb.uri, {
-    useNewUrlParser: true,
-    poolSize: 10,
-    autoReconnect: true,
-    // retry to connect for 60 times
-    reconnectTries: 60,
-    // wait 1 second before retrying
-    reconnectInterval: 1000
-}, function(err, client) {
-    if(err) {
-        console.error(err);
-    } else {
-        console.log('Connected to mongodb');
-        if (client) {
-            const db = client.db(config.db.mongodb.dbName);
-            gfs = new mongodb.GridFSBucket(db);
-        }
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db(config.db.mongodb.dbName);
+  // perform actions on the collection object
+  if(collection) {
+      gfs = new mongodb.GridFSBucket(collection)
     }
+    // console.log('this is the collection ------', gfs)
+  client.close();
 });
+
+
+// let gfs;
+// MongoClient.connect(config.db.mongodb.uri, {
+//     useNewUrlParser: true,
+//     poolSize: 10,
+//     autoReconnect: true,
+//     // retry to connect for 60 times
+//     reconnectTries: 60,
+//     // wait 1 second before retrying
+//     reconnectInterval: 1000
+// }, function(err, client) {
+//     if(err) {
+//         console.error(err);
+//     } else {
+//         console.log('Connected to mongodb');
+//         if (client) {
+//             const db = client.db(config.db.mongodb.dbName);
+//             gfs = new mongodb.GridFSBucket(db);
+//         }
+//     }
+// });
 
 
 module.exports = function (req, res, next) {
